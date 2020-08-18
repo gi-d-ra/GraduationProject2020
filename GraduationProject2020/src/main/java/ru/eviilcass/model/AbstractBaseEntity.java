@@ -1,6 +1,7 @@
 package ru.eviilcass.model;
 
 import org.hibernate.Hibernate;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 
@@ -16,6 +17,12 @@ public abstract class AbstractBaseEntity {
     protected Integer id;
 
     protected AbstractBaseEntity() {
+    }
+
+    // doesn't work for hibernate lazy proxy
+    public int id() {
+        Assert.notNull(id, "Entity must has id");
+        return id;
     }
 
     protected AbstractBaseEntity(Integer id) {
