@@ -3,6 +3,7 @@ package ru.eviilcass.model;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
+import ru.eviilcass.util.DateTimeUtil;
 
 import javax.persistence.Column;
 import javax.persistence.FetchType;
