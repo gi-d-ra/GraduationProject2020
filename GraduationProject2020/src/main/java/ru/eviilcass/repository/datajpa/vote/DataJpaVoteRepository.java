@@ -1,6 +1,7 @@
 package ru.eviilcass.repository.datajpa.vote;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import ru.eviilcass.model.Vote;
 import ru.eviilcass.repository.datajpa.restaurant.CrudRestaurantRepository;
 import ru.eviilcass.repository.datajpa.user.CrudUserRepository;
@@ -8,6 +9,7 @@ import ru.eviilcass.repository.datajpa.user.CrudUserRepository;
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public class DataJpaVoteRepository {
     @Autowired
     private CrudUserRepository userRepo;
@@ -47,7 +49,7 @@ public class DataJpaVoteRepository {
         return voteRepo.save(vote);
     }
 
-    public Vote getInDateByUser(LocalDate date, int userId) {
+    public Vote getInDateByUser(int userId, LocalDate date) {
         return voteRepo.getInDateByUser(date, userId);
     }
 
