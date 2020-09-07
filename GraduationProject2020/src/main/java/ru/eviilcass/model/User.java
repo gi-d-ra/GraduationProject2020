@@ -3,7 +3,6 @@ package ru.eviilcass.model;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
@@ -13,20 +12,13 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.*;
 
-//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-//@NamedQueries({
-//        @NamedQuery(name = User.DELETE, query = "DELETE FROM User u WHERE u.id=:id"),
-//        @NamedQuery(name = User.BY_EMAIL, query = "SELECT DISTINCT u FROM User u LEFT JOIN FETCH u.roles WHERE u.email=?1"),
-//        @NamedQuery(name = User.ALL_SORTED, query = "SELECT u FROM User u ORDER BY u.name, u.email"),
-//})
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+
 @Entity
 @Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = "email", name = "users_unique_email_idx")})
 public class User extends AbstractNamedEntity {
 
-    //    public static final String DELETE = "User.delete";
-//    public static final String BY_EMAIL = "User.getByEmail";
-//    public static final String ALL_SORTED = "User.getAllSorted";
-//
+
     @Column(name = "email", nullable = false, unique = true)
     @Email
     @NotBlank
@@ -41,17 +33,17 @@ public class User extends AbstractNamedEntity {
     @Column(name = "enabled", nullable = false, columnDefinition = "bool default true")
     private boolean enabled = true;
 
-    //    @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")
-//    @NotNull
+    @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")
+    @NotNull
     private Date registered = new Date();
 
-//      @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     @ElementCollection(fetch = FetchType.EAGER)
-////    @Fetch(FetchMode.SUBSELECT)
-//    @BatchSize(size = 200)
+//    @Fetch(FetchMode.SUBSELECT)
+    @BatchSize(size = 200)
     private Set<Role> roles;
 
     public User() {

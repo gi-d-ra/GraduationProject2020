@@ -5,13 +5,12 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 import ru.eviilcass.util.DateTimeUtil;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "votes")
 public class Vote extends AbstractNamedEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
