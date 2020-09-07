@@ -44,12 +44,12 @@ public class VoteTo {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)return true;
-        if(obj == null || obj.getClass()!=getClass())return false;
-        Vote that = (Vote)obj;
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != getClass()) return false;
+        Vote that = (Vote) obj;
         return that.getDate().equals(date)
                 && that.getElected().getName().equals(elected.getName())
-                && Objects.equals(id,that.getId());
+                && Objects.equals(id, that.getId());
     }
 
     @Override
