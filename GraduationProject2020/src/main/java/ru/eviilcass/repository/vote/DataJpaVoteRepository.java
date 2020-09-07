@@ -1,10 +1,10 @@
-package ru.eviilcass.repository.datajpa.vote;
+package ru.eviilcass.repository.vote;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.eviilcass.model.Vote;
-import ru.eviilcass.repository.datajpa.restaurant.CrudRestaurantRepository;
-import ru.eviilcass.repository.datajpa.user.CrudUserRepository;
+import ru.eviilcass.repository.restaurant.CrudRestaurantRepository;
+import ru.eviilcass.repository.user.CrudUserRepository;
 
 import java.time.LocalDate;
 import java.util.List;

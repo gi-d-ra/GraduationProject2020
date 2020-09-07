@@ -1,15 +1,10 @@
-package ru.eviilcass.repository.datajpa.restaurant;
+package ru.eviilcass.repository.restaurant;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.EntityGraph;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import ru.eviilcass.model.Dish;
 import ru.eviilcass.model.Restaurant;
-import ru.eviilcass.repository.datajpa.vote.CrudVoteRepository;
+import ru.eviilcass.repository.vote.CrudVoteRepository;
 
 import java.time.LocalDate;
 import java.util.List;

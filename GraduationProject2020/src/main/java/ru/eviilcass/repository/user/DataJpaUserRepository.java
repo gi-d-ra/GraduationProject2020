@@ -1,4 +1,4 @@
-package ru.eviilcass.repository.datajpa.user;
+package ru.eviilcass.repository.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

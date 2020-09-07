@@ -1,4 +1,4 @@
-package ru.eviilcass.repository.datajpa.restaurant;
+package ru.eviilcass.repository.restaurant;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

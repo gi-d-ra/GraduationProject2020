@@ -1,4 +1,4 @@
-package ru.eviilcass.repository.datajpa.user;
+package ru.eviilcass.repository.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
