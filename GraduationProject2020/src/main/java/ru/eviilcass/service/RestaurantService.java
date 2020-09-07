@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.eviilcass.model.Dish;
 import ru.eviilcass.model.Restaurant;
-import ru.eviilcass.repository.datajpa.restaurant.DataJpaRestaurantRepository;
-import ru.eviilcass.repository.datajpa.user.DataJpaUserRepository;
-import ru.eviilcass.repository.datajpa.vote.DataJpaVoteRepository;
+import ru.eviilcass.repository.restaurant.DataJpaRestaurantRepository;
+import ru.eviilcass.repository.user.DataJpaUserRepository;
+import ru.eviilcass.repository.vote.DataJpaVoteRepository;
 import ru.eviilcass.to.RestaurantTo;
 import ru.eviilcass.util.exception.ScoreAccessException;
 

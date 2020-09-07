@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.eviilcass.AuthorizedUser;
 import ru.eviilcass.model.User;
-import ru.eviilcass.repository.datajpa.user.DataJpaUserRepository;
+import ru.eviilcass.repository.user.DataJpaUserRepository;
 
 import java.util.List;
 

@@ -1,9 +1,10 @@
 package ru.eviilcass.service;
 
+import org.springframework.stereotype.Service;
 import ru.eviilcass.model.Vote;
-import ru.eviilcass.repository.datajpa.restaurant.DataJpaRestaurantRepository;
-import ru.eviilcass.repository.datajpa.user.DataJpaUserRepository;
-import ru.eviilcass.repository.datajpa.vote.DataJpaVoteRepository;
+import ru.eviilcass.repository.restaurant.DataJpaRestaurantRepository;
+import ru.eviilcass.repository.user.DataJpaUserRepository;
+import ru.eviilcass.repository.vote.DataJpaVoteRepository;
 import ru.eviilcass.to.RestaurantTo;
 import ru.eviilcass.to.VoteTo;
 import ru.eviilcass.util.exception.VoteException;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 import static ru.eviilcass.util.ValidationUtil.checkNotFoundWithId;
 
+@Service
 public class VoteService {
 
     final DataJpaRestaurantRepository restRepo;
