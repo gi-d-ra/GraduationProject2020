@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "votes")
-public class Vote extends AbstractNamedEntity {
+public class Vote extends AbstractBaseEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)

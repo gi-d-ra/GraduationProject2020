@@ -12,10 +12,10 @@ public class VoteTo {
 
     private LocalDate date;
 
-    public VoteTo(RestaurantTo elected, Integer id, LocalDate date) {
+    public VoteTo(int id, RestaurantTo elected, LocalDate date) {
         this.elected = elected;
-        this.id = id;
         this.date = date;
+        this.id = id;
     }
 
     public RestaurantTo getElected() {
@@ -54,7 +54,7 @@ public class VoteTo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(elected, id, date);
+        return Objects.hash(id, date, elected.getName());
     }
 
     @Override

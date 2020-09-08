@@ -116,13 +116,4 @@ public class RestaurantService {
     public void delete(int id) {
         checkNotFoundWithId(restaurantRepo.delete(id), id);
     }
-
-    public void cacheScoreEvict() {
-
-    }
-
-    public void cacheRestaurantEvict() {
-
-    }
-
 }

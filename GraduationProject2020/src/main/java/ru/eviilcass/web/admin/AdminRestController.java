@@ -81,9 +81,9 @@ public class AdminRestController {
         service.update(new Restaurant(id, restName));
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Restaurant> createWithLocation(@RequestBody Restaurant rest) {
-        Restaurant created = service.create(rest);
+    @PostMapping
+    public ResponseEntity<Restaurant> createWithLocation(@RequestParam String restName) {
+        Restaurant created = service.create(new Restaurant(restName));
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(REST_URL + "/{id}")
                 .buildAndExpand(created.getId()).toUri();
@@ -91,7 +91,7 @@ public class AdminRestController {
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
 
-    @PostMapping("/{restId}/dishes")
+    @PostMapping(value = "/{restId}/dishes", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Dish> createDish(@RequestBody DishTo dishTo, @PathVariable int restId) {
         Dish dish = new Dish(dishTo);
         checkNew(dish);
@@ -103,7 +103,7 @@ public class AdminRestController {
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
 
-    @PutMapping("/{restId}/dishes/{id}")
+    @PutMapping(value = "/{restId}/dishes/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateDish(@PathVariable int restId, @PathVariable int id, @RequestBody Dish dish) {
         assureIdConsistent(dish, id);

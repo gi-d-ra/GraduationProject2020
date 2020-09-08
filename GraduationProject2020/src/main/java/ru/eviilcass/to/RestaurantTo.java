@@ -66,11 +66,10 @@ public class RestaurantTo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RestaurantTo that = (RestaurantTo) o;
-        return countOfVotes == that.countOfVotes &&
-                Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(dishes, that.dishes);
+        return name.equals(that.name) &&
+                Objects.equals(id, that.id);
     }
+
 
     @Override
     public int hashCode() {

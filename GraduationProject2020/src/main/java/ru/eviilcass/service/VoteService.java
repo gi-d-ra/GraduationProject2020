@@ -68,7 +68,7 @@ public class VoteService {
                 .stream()
                 .map(vote -> {
                     RestaurantTo restTo = restService.getWithMenuInDate(vote.getElected().getId(), vote.getDate());
-                    return new VoteTo(restTo, vote.getId(), vote.getDate());
+                    return new VoteTo(vote.getId(),restTo, vote.getDate());
                 })
                 .sorted((v1, v2) -> {
                     if (v1.getDate().isEqual(v2.getDate())) return 0;
@@ -76,9 +76,6 @@ public class VoteService {
                     else return -1;
                 })
                 .collect(Collectors.toList());
-    }
-
-    public void cacheEvict() {
     }
 
 }

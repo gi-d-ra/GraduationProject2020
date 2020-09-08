@@ -76,13 +76,10 @@ public class DishTo {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DishTo dishTo = (DishTo) o;
-        return price == dishTo.price &&
-                Objects.equals(id, dishTo.id) &&
-                Objects.equals(name, dishTo.name) &&
-                Objects.equals(date, dishTo.date);
+        if(this==o)return true;
+        if(o==null || getClass()!=o.getClass())return false;
+        DishTo d = (DishTo)o;
+        return this.name.equals(d.name) && Objects.equals(id,d.id);
     }
 
     @Override
