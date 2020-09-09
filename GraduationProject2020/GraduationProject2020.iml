@@ -15,6 +15,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="GraduationProject2020" value="f0ac9854-aca1-4dae-b65d-51ed3199b519" />
+          <factory-entry name="entityManagerFactory" value="f0ac9854-aca1-4dae-b65d-51ed3199b519" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
