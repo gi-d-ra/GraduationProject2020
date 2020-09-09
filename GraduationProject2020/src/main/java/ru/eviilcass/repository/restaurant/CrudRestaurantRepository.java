@@ -13,7 +13,7 @@ import java.util.List;
 public interface CrudRestaurantRepository extends JpaRepository<Restaurant, Integer> {
     @Transactional
     @Modifying
-    @Query("DELETE FROM User u WHERE u.id=:id")
+    @Query("DELETE FROM Restaurant r WHERE r.id=:id")
     int delete(@Param("id") int id);
 
     @EntityGraph(attributePaths = {"dishes"}, type = EntityGraph.EntityGraphType.LOAD)

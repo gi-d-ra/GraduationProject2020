@@ -20,7 +20,6 @@ public interface CrudVoteRepository extends JpaRepository<Vote, Integer> {
     @Query("DELETE FROM Vote v WHERE v.id=:id")
     int delete(@Param("id") int id);
 
-//    @SuppressWarnings("JpaQlInspection")
     @Query("SELECT v FROM Vote v WHERE v.date=:date")
     List<Vote> getInDate(@Param("date") LocalDate date);
 

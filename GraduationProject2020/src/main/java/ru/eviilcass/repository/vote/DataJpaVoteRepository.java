@@ -45,7 +45,7 @@ public class DataJpaVoteRepository {
             return null;
         }
         vote.setVoter(userRepo.getOne(userId));
-        vote.setElected(restaurantRepo.getOne(userId));
+        vote.setElected(restaurantRepo.getOne(restId));
         return voteRepo.save(vote);
     }
 

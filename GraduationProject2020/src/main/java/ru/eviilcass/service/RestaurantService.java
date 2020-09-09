@@ -59,7 +59,7 @@ public class RestaurantService {
     public List<RestaurantTo> getScoreForUser(int userId) throws ScoreAccessException {
         LocalDateTime now = LocalDateTime.now();
         if (voteRepo.getInDateByUser(userId, now.toLocalDate()) != null) {
-            if (now.toLocalTime().isAfter(LocalTime.of(11, 0, 0, 0))) {
+            if (now.toLocalTime().isAfter(LocalTime.of(11, 0))) {
                 return getAllWithVotes(now.toLocalDate());
             } else
                 throw new ScoreAccessException("Results of voting are available after 11 a.m. Now is " + now.toLocalTime());

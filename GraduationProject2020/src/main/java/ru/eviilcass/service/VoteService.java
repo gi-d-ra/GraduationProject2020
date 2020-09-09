@@ -53,13 +53,13 @@ public class VoteService {
     }
 
     public Vote createVote(int userId, int restId) throws VoteException {
-        Vote vote1 = new Vote();
-        Vote vote2 = voteRepo.getInDateByUser(userId, LocalDate.now());
-        if (vote2 != null) {
-            throw new VoteException("User has already voted today");
-        }
-        vote1.setDate(LocalDate.now());
-        return voteRepo.save(vote1, userId, restId);
+        LocalDateTime now = LocalDateTime.now();
+        Vote v = new Vote();
+        Vote v2 = voteRepo.getInDateByUser(userId, now.toLocalDate());
+        if(v2!=null) throw new VoteException("User has already voted today");
+
+        v.setDate(now.toLocalDate());
+        return voteRepo.save(v, userId, restId);
     }
 
     public List<VoteTo> getVotesForUser(int userId) {
